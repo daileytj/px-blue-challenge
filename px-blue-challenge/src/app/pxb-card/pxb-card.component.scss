@@ -1,0 +1,32 @@
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.mat-card-footer {
+  margin: -8px -16px -24px -16px;
+}
+
+.mat-card-footer:hover {
+  cursor: pointer;
+}
+
+i {
+  font-size: 36px;
+}
+
+.content-icon {
+  margin-top: -2px;
+  margin-right: 1rem;
+}
+
+.content-left {
+  margin-bottom: 0.5rem;
+}
+
+.blue-text {
+  color: #007bc1;
+}
+
+.red-text {
+  color: #ca3c3d;
+}

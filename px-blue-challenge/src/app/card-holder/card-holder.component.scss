@@ -1,0 +1,9 @@
+.card-list-wrapper {
+    margin: 1rem 3vw
+}
+
+@media screen and (max-width: 600px) {
+    .card-list-wrapper {
+        margin: 1rem auto;
+    }
+}
