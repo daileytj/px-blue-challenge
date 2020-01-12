@@ -1,14 +1,16 @@
 <mat-card style="margin: 5px;">
-    <mat-card-header fxLayout="row">
+    <mat-card-header fxLayout="row" class="industrial-bg">
         <div fxLayout="column">
-            <div>{{cardData.title}}</div>
-            <div>{{cardData.subtitle}}</div>
-            <div>{{cardData.deviceCount || 0}} Device<span *ngIf="!cardData.deviceCount || cardData.deviceCount > 1">s</span></div>
+
+        <div [ngClass]="cardData.alarmCount > 0 ? 'alarm-overlay' : 'standard-overlay'"></div>
+            <div style="z-index:1">{{cardData.title}}</div>
+            <div class="mat-subheading-1" style="margin:0; z-index:1">{{cardData.subtitle}}</div>
+            <div class="mat-subheading-1" style="margin:0; font-weight: 300; z-index:1">{{cardData.deviceCount || 0}} Device<span *ngIf="!cardData.deviceCount || cardData.deviceCount > 1">s</span></div>
         </div>
         <div fxFlex></div>
         <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
     </mat-card-header>
-    <mat-card-content fxLayout="row" style="margin-top:8px; color: #546167">
+    <mat-card-content fxLayout="row" style="color: #546167">
         <div fxLayout="column" fxFlex="40" style="margin-top:8px">
             <div fxLayout="row" class="content-left" style="margin-top:8px;" [ngClass]="cardData.alarmCount > 0 ? 'red-text' : ''"><mat-icon class="content-icon" *ngIf="!cardData.alarmCount">notifications</mat-icon><mat-icon class="content-icon" *ngIf="cardData.alarmCount">notifications_active</mat-icon>{{cardData.alarmCount || 0}} Alarm<span *ngIf="!cardData.alarmCount || cardData.alarmCount > 1">s</span></div>
             <div fxLayout="row" class="content-left" [ngClass]="cardData.eventCount > 0 ? 'blue-text' : ''"><mat-icon class="content-icon">info</mat-icon> {{cardData.eventCount || 0}} Event<span *ngIf="!cardData.eventCount || cardData.eventCount > 1">s</span></div>
@@ -44,7 +46,7 @@
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-footer (click)="navigateToLocation()" fxLayout="row" style="padding: 1rem;" fxLayoutAlign="start center">
-        <div class="mat-caption">View Location</div>
+        <div class="mat-caption" style="font-size: .875rem;">View Location</div>
         <div fxFlex></div>
         <mat-icon>keyboard_arrow_right</mat-icon>
     </mat-card-footer>

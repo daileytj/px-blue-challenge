@@ -1,11 +1,11 @@
-<mat-toolbar color="warn">
+<mat-toolbar color="warn" style="position:fixed; top:0; left:0; width: 100vw; z-index: 2;">
   <mat-toolbar-row>
     <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
-    <div fxLayout="column" style="margin-left: .5rem;">
+    <div fxLayout="column" style="margin-left: 1rem;">
       <div>Overview</div>
-      <div class="mat-subheading-2">Gary Steelworks</div>
+      <div fxLayout="row" fxLayoutAlign="start center" style="font-size: .875rem;">{{company}}<mat-icon>arrow_drop_down</mat-icon></div>
     </div>
     <div fxFlex></div>
     <button mat-icon-button>
@@ -13,4 +13,5 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
+<div style="margin-top:64px;"></div>
 <router-outlet></router-outlet>
