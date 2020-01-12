@@ -15,8 +15,11 @@ import {
   MatCardModule,
   MatButtonModule,
   MatDividerModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule
 } from '@angular/material';
+import { NavigationService } from './services/navigation.service';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,11 @@ import {
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
